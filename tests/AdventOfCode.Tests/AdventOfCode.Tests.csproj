@@ -24,4 +24,13 @@
     <ProjectReference Include="..\..\src\AdventOfCode.Library\AdventOfCode.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="input\d01input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="input\d01sample.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
