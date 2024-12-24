@@ -1,18 +1,7 @@
-using System.Reflection;
-
 namespace AdventOfCode.Tests;
 
 public class When_Doing_Day_1
 {
-    private string getTestPath()
-    {
-        return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
-    }
-
-    private string getFileContents(string filePath)
-    {
-        return File.ReadAllText(Path.Combine(getTestPath(), filePath));
-    }
 
     [Fact]
     public void Should_Load_Sample_File_Contents()
@@ -21,7 +10,7 @@ public class When_Doing_Day_1
         var path = "input/d01sample.txt";
 
         //act
-        var contents = getFileContents(path);
+        var contents = SantasLittleTestHelper.GetFileContents(path);
 
         //assert
         Assert.StartsWith("3   4", contents);
@@ -35,11 +24,11 @@ public class When_Doing_Day_1
         var path = "input/d01input.txt";
 
         //act
-        var contents = getFileContents(path);
+        var contents = SantasLittleTestHelper.GetFileContents(path);
 
         //assert
         Assert.StartsWith("88276   66757", contents);
-        Assert.EndsWith("36438   47508\n", contents);
+        Assert.EndsWith("36438   47508\r\n", contents);
     }
 
     [Fact]
@@ -47,7 +36,7 @@ public class When_Doing_Day_1
     {
         //arrange
         var path = "input/d01sample.txt";
-        var contents = getFileContents(path);
+        var contents = SantasLittleTestHelper.GetFileContents(path);
 
         //act
         var sut = new Day1Calculator(contents);
@@ -64,7 +53,7 @@ public class When_Doing_Day_1
     {
         //arrange
         var path = "input/d01input.txt";
-        var contents = getFileContents(path);
+        var contents = SantasLittleTestHelper.GetFileContents(path);
 
         //act
         var sut = new Day1Calculator(contents, "\n");
@@ -81,7 +70,7 @@ public class When_Doing_Day_1
     {
         //arrange
         var path = "input/d01sample.txt";
-        var contents = getFileContents(path);
+        var contents = SantasLittleTestHelper.GetFileContents(path);
 
         //act
         var sut = new Day1Calculator(contents);
@@ -95,7 +84,7 @@ public class When_Doing_Day_1
     {
         //arrange
         var path = "input/d01input.txt";
-        var contents = getFileContents(path);
+        var contents = SantasLittleTestHelper.GetFileContents(path);
 
         //act
         var sut = new Day1Calculator(contents, "\n");
@@ -109,7 +98,7 @@ public class When_Doing_Day_1
     {
         //arrange
         var path = "input/d01sample.txt";
-        var contents = getFileContents(path);
+        var contents = SantasLittleTestHelper.GetFileContents(path);
 
         //act
         var sut = new Day1Calculator(contents);
@@ -123,7 +112,7 @@ public class When_Doing_Day_1
     {
         //arrange
         var path = "input/d01input.txt";
-        var contents = getFileContents(path);
+        var contents = SantasLittleTestHelper.GetFileContents(path);
 
         //act
         var sut = new Day1Calculator(contents, "\n");
